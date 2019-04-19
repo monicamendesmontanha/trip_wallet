@@ -11,7 +11,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new
   end
 
-  def show
+  def history
     @trip = Trip.find(params[:trip_id])
   end
 
