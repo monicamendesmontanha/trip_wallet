@@ -19,10 +19,10 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
 
     respond_to do |format|
-      if @expense.save!
-        format.html { redirect_to "/trips/#{@expense.trip.id}", notice: 'Expense was successfully created.' }
+      if @expense.save
+        format.html { redirect_to add_expense_path(@expense.trip.id), notice: 'Expense was successfully created.' }
       else
-        format.html { redirect_to "/trips/#{@expense.trip.id}" }
+        format.html { redirect_to add_expense_path(@expense.trip.id), flash: { errors: @expense.errors.full_messages } }
       end
     end
   end

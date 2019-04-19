@@ -18,12 +18,10 @@
 
   <%= form.hidden_field :trip_id, value: @trip.id %>
 
-  <% if @expense.errors.any? %>
+  <% if flash[:errors] != nil %>
     <div id="error_explanation">
-      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this trip from being saved:</h2>
-
       <ul>
-      <% @expense.errors.full_messages.each do |message| %>
+      <% flash[:errors].each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
