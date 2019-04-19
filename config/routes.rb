@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'expenses/new'
+  post 'expenses/create'
+  root :to => 'trips#index'
   resources :trips
   resources :expense_categories
   resources :destinations
