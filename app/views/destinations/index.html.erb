@@ -1,22 +1,21 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Destinations</h1>
-
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Currency</th>
+      <th>Symbol</th>
       <th>Exchange rate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @destinations.each do |destination| %>
       <tr>
         <td><%= destination.name %></td>
         <td><%= destination.currency %></td>
+        <td><%= destination.symbol %></td>
         <td><%= destination.exchange_rate %></td>
         <td><%= link_to 'Show', destination %></td>
         <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
@@ -25,7 +24,5 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Destination', new_destination_path %>

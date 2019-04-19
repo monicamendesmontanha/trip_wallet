@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_003504) do
+ActiveRecord::Schema.define(version: 2019_04_19_021407) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_04_19_003504) do
     t.decimal "exchange_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "symbol"
   end
 
   create_table "expense_categories", force: :cascade do |t|
@@ -30,10 +31,10 @@ ActiveRecord::Schema.define(version: 2019_04_19_003504) do
     t.decimal "amount"
     t.text "notes"
     t.date "expense_date"
-    t.integer "category_id"
     t.integer "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "expense_category_id"
     t.index ["trip_id"], name: "index_expenses_on_trip_id"
   end
 

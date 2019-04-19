@@ -1,2 +1,52 @@
-<h1>Expenses#new</h1>
-<p>Find me in app/views/expenses/new.html.erb</p>
+<h1>Add Expense</h1>
+
+<div>
+  Trip: <%= @trip.name %>
+</div>
+
+<div>
+  Destination: <%= @trip.destination.name %>
+</div>
+
+<div>
+  Symbol: <%= @trip.destination.symbol %>
+</div>
+
+<%= form_with(model: @expense) do |form| %>
+
+  <%= form.hidden_field :trip_id, value: @trip.id %>
+
+  <% if @expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+      <% @expense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_field :notes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expense_date %>
+    <%= form.date_select :expense_date %>
+  </div>
+  <div class="field">
+    <%= form.label :expense_category_id %>
+    <%= form.select :expense_category_id, ExpenseCategory.all.map { |d| [d.name, d.id] }, include_blank: 'Please choose' %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

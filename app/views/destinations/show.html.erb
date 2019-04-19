@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @destination.name %>
 </p>
-
 <p>
   <strong>Currency:</strong>
   <%= @destination.currency %>
 </p>
-
+<p>
+  <strong>Symbol:</strong>
+  <%= @destination.symbol %>
+</p>
 <p>
   <strong>Exchange rate:</strong>
   <%= @destination.exchange_rate %>
 </p>
-
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>

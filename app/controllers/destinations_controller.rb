@@ -69,6 +69,6 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.require(:destination).permit(:name, :currency, :exchange_rate)
+      params.require(:destination).permit(:name, :currency, :symbol, :exchange_rate)
     end
 end
