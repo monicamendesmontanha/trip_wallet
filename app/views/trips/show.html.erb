@@ -1,4 +1,4 @@
-<%= link_to 'Summary', trips_path %> |
+<%= link_to 'My Trips', trips_path %> |
 <%= link_to 'Edit', edit_trip_path(@trip) %>
 
 <h1>Summary</h1>
@@ -30,5 +30,5 @@
   <%= @trip.destination.name %>
 </p>
 
-<%= link_to 'Add Expense', "/trips/#{@trip.id}/expenses/new" %> |
+<%= link_to 'Add Expense', add_expense_path(@trip.id) %> |
 <%= link_to 'History', "/trips/#{@trip.id}/expenses/history" %>

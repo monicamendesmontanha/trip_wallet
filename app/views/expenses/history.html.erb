@@ -1,5 +1,5 @@
 <%= link_to 'Summary', "/trips/#{@trip.id}/" %> |
-<%= link_to 'Add Expense', "/trips/#{@trip.id}/expenses/new" %>
+<%= link_to 'Add Expense', add_expense_path(@trip.id) %>
 
 <h1>History</h1>
 

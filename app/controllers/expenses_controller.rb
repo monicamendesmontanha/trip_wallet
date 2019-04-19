@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
 
 
   # GET /expenses/new
-  def new
+  def add
     @trip = Trip.find(params[:trip_id])
     @expense = Expense.new
   end
