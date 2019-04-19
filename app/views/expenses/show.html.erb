@@ -1,0 +1,33 @@
+<%= link_to 'Summary', "/trips/#{@trip.id}/" %> |
+<%= link_to 'Add Expense', "/trips/#{@trip.id}/expenses/new" %>
+
+<h1>History</h1>
+
+<div>
+  Trip: <%= @trip.name %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Notes</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trip.expenses.each do |expense| %>
+      <tr>
+        <td><%= "#{@trip.destination.symbol}: #{expense.amount}" %></td>
+        <td><%= expense.notes %></td>
+        <td><%= expense.expense_date %></td>
+        <td><%= expense.expense_category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

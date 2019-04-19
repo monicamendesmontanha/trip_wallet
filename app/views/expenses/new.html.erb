@@ -43,7 +43,7 @@
   </div>
   <div class="field">
     <%= form.label :expense_category_id %>
-    <%= form.select :expense_category_id, ExpenseCategory.all.map { |d| [d.name, d.id] }, include_blank: 'Please choose' %>
+    <%= form.select :expense_category_id, ExpenseCategory.all.map { |e| [e.name, e.id] }, include_blank: 'Please choose' %>
   </div>
   <div class="actions">
     <%= form.submit %>

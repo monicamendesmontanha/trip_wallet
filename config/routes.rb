@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'trips/:trip_id/expenses/new' => 'expenses#new'
   post 'expenses' => 'expenses#create'
 
+  get 'trips/:trip_id/expenses/show' => 'expenses#show'
+
   resources :trips
   resources :expense_categories
   resources :destinations
