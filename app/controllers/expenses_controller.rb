@@ -13,6 +13,7 @@ class ExpensesController < ApplicationController
 
   def history
     @trip = Trip.find(params[:trip_id])
+    @total_amount = @trip.expenses.sum { |expense| expense.amount }
   end
 
   def create
