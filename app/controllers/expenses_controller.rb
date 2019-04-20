@@ -21,10 +21,19 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to add_expense_path(@expense.trip.id), notice: 'Expense was successfully created.' }
+        format.html { redirect_to trip_path(@expense.trip.id), notice: 'Expense was successfully created.' }
       else
-        format.html { redirect_to add_expense_path(@expense.trip.id), flash: { errors: @expense.errors.full_messages } }
+        format.html { redirect_to trip_path(@expense.trip.id), flash: { errors: @expense.errors.full_messages } }
       end
+    end
+  end
+
+  def destroy
+    expense = Expense.find(params[:id])
+    expense.destroy
+    respond_to do |format|
+      format.html { redirect_to history_expense_path(expense.trip.id), notice: 'Expense was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

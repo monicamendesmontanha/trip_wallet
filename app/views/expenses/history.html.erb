@@ -2,6 +2,7 @@
 <%= link_to 'Add Expense', add_expense_path(@trip.id) %>
 
 <h1>History</h1>
+<p id="notice"><%= notice %></p>
 
 <div>
   Trip: <%= @trip.name %>
@@ -19,8 +20,11 @@
   </thead>
 
   <tbody>
+
     <% @trip.expenses.each do |expense| %>
+
       <tr>
+        <td><%= link_to '-', delete_expense_path(expense.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= "#{@trip.destination.symbol}: #{expense.amount}" %></td>
         <td><%= expense.notes %></td>
         <td><%= expense.expense_date.strftime("%d/%m/%y") %></td>
@@ -28,6 +32,7 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>
@@ -35,4 +40,3 @@
 <div>
   Total: <%= @total_amount %>
 </div>
-

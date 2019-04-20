@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'trips/:trip_id/expenses/add' => 'expenses#add', as: :add_expense
   post 'expenses' => 'expenses#create'
 
-  get 'trips/:trip_id/expenses/history' => 'expenses#history'
+  get 'trips/:trip_id/expenses/history' => 'expenses#history', as: :history_expense
+
+  delete '/expenses/:id' => 'expenses#destroy', as: :delete_expense
 
   resources :trips
   resources :expense_categories
