@@ -30,6 +30,10 @@
   <%= "#{@trip.destination.symbol} #{@trip.budget}" %>
 </p>
 
+<p>
+  Total: <%= @trip.total_amount %>
+</p>
+
 
 <%= link_to 'Add Expense', add_expense_path(@trip.id) %> |
 <%= link_to 'History', "/trips/#{@trip.id}/expenses/history" %>
