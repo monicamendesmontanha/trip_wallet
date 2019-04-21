@@ -16,6 +16,10 @@ class Trip < ApplicationRecord
     budget - total_amount
   end
 
+  def percentual_remaining
+    remaining/100
+  end
+
   def daily_budget
     number_of_days = (start_date..end_date).count
     budget / number_of_days
