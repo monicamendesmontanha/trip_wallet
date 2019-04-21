@@ -54,6 +54,6 @@
   Daily Budget: <%= (@trip.daily_budget).round(2) %> (<%= @trip.number_of_days %>)
 </p>
 
-<%= link_to 'Chart', chart_path(@trip.id) %> |
+<%= link_to 'History', "/trips/#{@trip.id}/expenses/history" %> |
 <%= link_to 'Add Expense', add_expense_path(@trip.id) %> |
-<%= link_to 'History', "/trips/#{@trip.id}/expenses/history" %>
+<%= link_to 'Chart', chart_path(@trip.id) %>
