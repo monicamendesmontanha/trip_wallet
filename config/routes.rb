@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/signup'
+
   root :to => 'trips#index'
 
   get 'trips/:trip_id/expenses/add' => 'expenses#add', as: :add_expense
