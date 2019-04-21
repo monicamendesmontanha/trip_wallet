@@ -12,25 +12,16 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
 
-    select_last_6_days = Date.today.downto(Date.today - 6).to_a.reverse
-
-    expenses_by_group = @trip.expenses.group_by { |expense| expense.expense_date }
-
-    total_expense_by_date = {}
-
-    select_last_6_days.each do |day|
-      expenses = expenses_by_group[day] || []
-      total_expense_by_date[day] = expenses.sum { |e| e.amount }
-    end
+    expenses_by_the_last_7_days = @trip.expenses_by_day
 
     @data = {
-      labels: total_expense_by_date.keys.map { |date| date.strftime("%a, %d %b") },
+      labels: expenses_by_the_last_7_days.keys.map { |date| date.strftime("%a, %d %b") },
       datasets: [
         {
             label: "My First dataset",
             backgroundColor: "rgba(220,220,220,0.2)",
             borderColor: "rgba(220,220,220,1)",
-            data: total_expense_by_date.values
+            data: expenses_by_the_last_7_days.values
         }
       ]
     }

@@ -32,6 +32,18 @@ class Trip < ApplicationRecord
     budget_based_on_destination / number_of_days
   end
 
+  def expenses_by_day
+    expenses_by_group = expenses.group_by { |expense| expense.expense_date }
+
+    total_expense_by_date = {}
+
+    last_7_days.each do |day|
+      expenses = expenses_by_group[day] || []
+      total_expense_by_date[day] = expenses.sum { |e| e.amount }
+    end
+
+    total_expense_by_date
+  end
 
   private
 
@@ -42,4 +54,11 @@ class Trip < ApplicationRecord
       errors.add(:end_date, "must be after the start date")
     end
  end
+
+  def last_7_days
+    Date.today.downto(Date.today - 6).to_a.reverse
+  end
+
+
+
 end
