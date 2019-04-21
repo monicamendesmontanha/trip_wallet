@@ -17,12 +17,12 @@
 
 <p>
   <strong>Start date:</strong>
-  <%= @trip.start_date %>
+  <%= @trip.start_date.strftime("%d/%m/%y") %>
 </p>
 
 <p>
   <strong>End date:</strong>
-  <%= @trip.end_date %>
+  <%= @trip.end_date.strftime("%d/%m/%y") %>
 </p>
 
 <%= bar_chart @data %>
