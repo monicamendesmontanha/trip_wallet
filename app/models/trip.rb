@@ -45,6 +45,17 @@ class Trip < ApplicationRecord
     total_expense_by_date
   end
 
+  def expenses_by_category
+    expenses_by_group = expenses.group_by {|expense| expense.expense_category.name}
+
+    total_expense_by_category = {}
+    expenses_by_group.each do |key, value|
+      total_expense_by_category[key] = value.sum { |e| e.amount }
+    end
+
+    total_expense_by_category
+  end
+
   private
 
   def end_date_after_start_date

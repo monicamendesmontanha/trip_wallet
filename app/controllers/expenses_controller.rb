@@ -17,22 +17,17 @@ class ExpensesController < ApplicationController
 
   def chart
     @trip = Trip.find(params[:trip_id])
-    # show the total amount regarding each category of expenses
-    expenses_by_group = @trip.expenses.group_by {|expense| expense.expense_category.name}
 
-    total_expense_by_category = {}
-    expenses_by_group.each do |key, value|
-      total_expense_by_category[key] = value.sum { |e| e.amount }
-    end
+    total_by_categories = @trip.expenses_by_category
 
     @data = {
-      labels: total_expense_by_category.keys,
+      labels: total_by_categories.keys,
       datasets: [
         {
             label: "Expense Category",
             backgroundColor: "rgba(220,220,220,0.2)",
             borderColor: "rgba(220,220,220,1)",
-            data: total_expense_by_category.values,
+            data: total_by_categories.values,
         }
       ]
     }
