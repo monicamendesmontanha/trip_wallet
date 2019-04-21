@@ -31,15 +31,15 @@
 </p>
 
 <p>
-  Total: <%= @trip.total_amount %>
+  Total: <%= number_to_currency(@trip.total_amount) %>
 </p>
 
 <p>
-  Remaining: <%= @trip.remaining %>
+  Remaining: <%= number_to_currency(@trip.remaining) %>
 </p>
 
 <p>
-  Daily Budget: <%= @trip.daily_budget %>
+  Daily Budget: <%= number_to_currency(@trip.daily_budget) %>
 </p>
 
 <%= link_to 'Add Expense', add_expense_path(@trip.id) %> |
