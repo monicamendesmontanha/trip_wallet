@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'expenses' => 'expenses#create'
 
   get 'trips/:trip_id/expenses/history' => 'expenses#history', as: :history_expense
+  get 'trips/:trip_id/expenses/chart' => 'expenses#chart', as: :chart
 
   delete '/expenses/:id' => 'expenses#destroy', as: :delete_expense
 

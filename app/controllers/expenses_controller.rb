@@ -15,6 +15,10 @@ class ExpensesController < ApplicationController
     @trip = Trip.find(params[:trip_id])
   end
 
+  def chart
+    @trip = Trip.find(params[:trip_id])
+  end
+
   def create
     @expense = Expense.new(expense_params)
 
