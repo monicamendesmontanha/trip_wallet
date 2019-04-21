@@ -34,6 +34,13 @@
   Total: <%= @trip.total_amount %>
 </p>
 
+<p>
+  Remaining: <%= @trip.remaining %>
+</p>
+
+<p>
+  Daily Budget: <%= @trip.daily_budget %>
+</p>
 
 <%= link_to 'Add Expense', add_expense_path(@trip.id) %> |
 <%= link_to 'History', "/trips/#{@trip.id}/expenses/history" %>

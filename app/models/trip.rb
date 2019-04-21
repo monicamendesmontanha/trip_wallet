@@ -12,6 +12,15 @@ class Trip < ApplicationRecord
     expenses.sum { |expense| expense.amount }
   end
 
+  def remaining
+    budget - total_amount
+  end
+
+  def daily_budget
+    number_of_days = (start_date..end_date).count
+    budget / number_of_days
+  end
+
   private
 
   def end_date_after_start_date
