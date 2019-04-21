@@ -21,7 +21,7 @@
 
   <tbody>
 
-    <% @trip.expenses.each do |expense| %>
+    <% @trip.expenses.sort_by{ |e| e.expense_date }.each do |expense| %>
 
       <tr>
         <td><%= link_to '-', delete_expense_path(expense.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
