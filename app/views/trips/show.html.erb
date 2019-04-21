@@ -26,12 +26,20 @@
 </p>
 
 <p>
-  <strong>Budget:</strong>
-  <%= "#{@trip.destination.symbol} #{@trip.budget}" %>
+  <strong>Budget Home:</strong>
+  <%= " AUD $ #{@trip.budget}" %>
+</p>
+
+</br>
+
+
+<p>
+  <strong>Budget Trip:</strong>
+  <%= "#{@trip.destination.symbol} #{@trip.budget_based_on_destination}" %>
 </p>
 
 <p>
-  Total: <%= @trip.total_amount %>
+  Expense Total: <%= @trip.total_amount %>
 </p>
 
 <p>
@@ -39,11 +47,11 @@
 </p>
 
 <p>
-  % remaining: <%= "#{@trip.percentual_remaining} %" %>
+  % remaining: <%= "#{(@trip.percentual_remaining).round(2)} %" %>
 </p>
 
 <p>
-  Daily Budget: <%= @trip.daily_budget %>
+  Daily Budget: <%= (@trip.daily_budget).round(2) %> (<%= @trip.number_of_days %>)
 </p>
 
 <%= link_to 'Add Expense', add_expense_path(@trip.id) %> |
