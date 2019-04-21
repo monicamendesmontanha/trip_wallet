@@ -14,13 +14,12 @@
   <tbody>
     <% @destinations.each do |destination| %>
       <tr>
+        <td><%= link_to '-', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= destination.name %></td>
         <td><%= destination.currency %></td>
         <td><%= destination.symbol %></td>
         <td><%= destination.exchange_rate %></td>
         <td><%= link_to 'Show', destination %></td>
-        <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
-        <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
