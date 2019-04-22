@@ -1,3 +1,6 @@
+<% if admin? == false  %>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>My Trips</h1>
@@ -26,3 +29,5 @@
 <br>
 
 <%= link_to 'New Trip', new_trip_path %>
+
+<% end  %>
