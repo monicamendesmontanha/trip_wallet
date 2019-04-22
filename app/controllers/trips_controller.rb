@@ -27,7 +27,6 @@ class TripsController < ApplicationController
       ]
     }
 
-
   end
 
   # GET /trips/new

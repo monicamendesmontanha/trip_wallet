@@ -8,16 +8,19 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def add
-    @trip = Trip.find(params[:trip_id])
+    @trip = find_trip(params)
+    return render_not_found if @trip == nil
     @expense = Expense.new
   end
 
   def history
-    @trip = Trip.find(params[:trip_id])
+    @trip = find_trip(params)
+    return render_not_found if @trip == nil
   end
 
   def chart
-    @trip = Trip.find(params[:trip_id])
+    @trip = find_trip(params)
+    return render_not_found if @trip == nil
 
     total_by_categories = @trip.expenses_by_category
 
@@ -56,6 +59,12 @@ class ExpensesController < ApplicationController
   end
 
   private
+
+
+    def find_trip(params)
+      Trip.find_by(user: current_user.id, id: params[:trip_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
       params.require(:expense).permit(:amount, :notes, :expense_date, :expense_category_id, :trip_id)
