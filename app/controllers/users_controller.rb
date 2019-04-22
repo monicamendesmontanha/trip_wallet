@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :check_admin!, only: [:show]
+  before_action :check_admin!
 
-  def show
-    @user = User.find(params[:id])
+  def index
+    @users = User.all
   end
 
   def signup
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome, #{@user.name}!"
-      redirect_to @user
+      redirect_to root_path
     else
       render :signup
     end

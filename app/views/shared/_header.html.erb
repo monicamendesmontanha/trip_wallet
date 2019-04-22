@@ -7,7 +7,7 @@
         <li><%= link_to "My Trips", root_path %></li>
 
         <% if admin? %>
-          <li><%= link_to "Users", '#' %></li>
+          <li><%= link_to "Users", '/users' %></li>
           <li><%= link_to 'Destinations', destinations_path %></li>
           <li><%= link_to 'Categories', expense_categories_path %></li>
         <% end %>
