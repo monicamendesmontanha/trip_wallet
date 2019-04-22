@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/signup'
 
   root :to => 'trips#index'
 
@@ -14,5 +13,11 @@ Rails.application.routes.draw do
   resources :trips
   resources :expense_categories
   resources :destinations
+
+  get '/signup' => 'users#signup', as: :signup_user_path
+  post '/signup' => 'users#create'
+  resources :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
