@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  before_action :check_login!
 
   def index
     @expenses = Expense.all

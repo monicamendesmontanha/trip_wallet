@@ -1,10 +1,10 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :check_login!
 
   # GET /trips
   # GET /trips.json
   def index
-    @trips = Trip.all
+    @trips = Trip.where(user: current_user.id)
   end
 
   # GET /trips/1
@@ -36,6 +36,7 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
+    @trip = Trip.find(params[:id])
   end
 
   # POST /trips
@@ -57,6 +58,8 @@ class TripsController < ApplicationController
   # PATCH/PUT /trips/1
   # PATCH/PUT /trips/1.json
   def update
+    @trip = Trip.find(params[:id])
+
     respond_to do |format|
       if @trip.update(trip_params)
         format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
@@ -71,6 +74,8 @@ class TripsController < ApplicationController
   # DELETE /trips/1
   # DELETE /trips/1.json
   def destroy
+    @trip = Trip.find(params[:id])
+
     @trip.destroy
     respond_to do |format|
       format.html { redirect_to trips_url, notice: 'Trip was successfully destroyed.' }
@@ -79,13 +84,8 @@ class TripsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_trip
-      @trip = Trip.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
-      params.require(:trip).permit(:name, :start_date, :end_date, :budget, :destination_id)
+      params.require(:trip).permit(:name, :start_date, :end_date, :budget, :destination_id).merge({ user_id: current_user.id })
     end
 end

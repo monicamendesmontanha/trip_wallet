@@ -1,6 +1,9 @@
 class Trip < ApplicationRecord
   belongs_to :destination
+  belongs_to :user
   has_many :expenses
+
+  validates :user_id, presence: true
 
   validates :name, presence: true, uniqueness: true
   validates :budget, numericality: true

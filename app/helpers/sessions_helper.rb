@@ -23,4 +23,12 @@ module SessionsHelper
     @current_user = nil
   end
 
+  def check_login!
+    if logged_in?
+      return true
+    else
+      redirect_to login_path
+    end
+  end
+
 end
