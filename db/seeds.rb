@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ExpenseCategory.destroy_all
+
 ExpenseCategory.create([
   { name: 'Food' },
   { name: 'Accomodation' },
@@ -12,3 +14,5 @@ ExpenseCategory.create([
   { name: 'Entertainment' },
   { name: 'Miscellaneous' }
 ])
+
+User.create(email: 'admin@example.com', name: 'Admin', password: 'adminadmin', admin: true)

@@ -10,7 +10,8 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
-    @trip = Trip.find(params[:id])
+    @trip = find_trip(params)
+    return render_not_found if @trip == nil
 
     expenses_by_the_last_7_days = @trip.expenses_by_day
 
@@ -36,7 +37,8 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
-    @trip = Trip.find(params[:id])
+    @trip = find_trip(params)
+    return render_not_found if @trip == nil
   end
 
   # POST /trips
@@ -58,7 +60,8 @@ class TripsController < ApplicationController
   # PATCH/PUT /trips/1
   # PATCH/PUT /trips/1.json
   def update
-    @trip = Trip.find(params[:id])
+    @trip = find_trip(params)
+    return render_not_found if @trip == nil
 
     respond_to do |format|
       if @trip.update(trip_params)
@@ -74,7 +77,8 @@ class TripsController < ApplicationController
   # DELETE /trips/1
   # DELETE /trips/1.json
   def destroy
-    @trip = Trip.find(params[:id])
+    @trip = find_trip(params)
+    return render_not_found if @trip == nil
 
     @trip.destroy
     respond_to do |format|
@@ -84,6 +88,11 @@ class TripsController < ApplicationController
   end
 
   private
+
+    def find_trip(params)
+      Trip.find_by(user: current_user.id, id: params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
       params.require(:trip).permit(:name, :start_date, :end_date, :budget, :destination_id).merge({ user_id: current_user.id })

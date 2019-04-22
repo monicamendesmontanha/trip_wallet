@@ -17,6 +17,10 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def admin?
+    logged_in? && current_user.admin == true
+  end
+
   # Logs out the current user.
   def log_out
     session.delete(:user_id)
@@ -28,6 +32,14 @@ module SessionsHelper
       return true
     else
       redirect_to login_path
+    end
+  end
+
+  def check_admin!
+    if admin?
+      return true
+    else
+      render_not_found
     end
   end
 
