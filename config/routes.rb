@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
   root :to => 'trips#index'
 
   get 'trips/:trip_id/expenses/add' => 'expenses#add', as: :add_expense
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
   get '/signup' => 'users#signup', as: :signup_user_path
   post '/signup' => 'users#create'
   resources :users
+
+  get    '/login'  => 'sessions#login'
+  post   '/login'  => 'sessions#create'
+  delete '/logout'  => 'sessions#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
