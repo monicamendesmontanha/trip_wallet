@@ -1,140 +1,196 @@
-/* ----------- Phone ----------- */
+/* --------  Global Styles ---------------*/
+@import url('https://fonts.googleapis.com/css?family=Cute+Font');
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
 
-/* Portrait and Landscape */
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 1080px)
-  and (-webkit-min-device-pixel-ratio: 3) {
-
-
-    /* Header Mobile */
-    header {
-      background-color: rgb(0, 0, 0);
-      padding: 50px;
-      margin: 0;
-    }
-
-    header nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    header nav .flex-grid {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      color: #fff;
-    }
-
-    link_to {
-      color: #fff;
-      font-size: 40px;
-    }
-
-    /* Body Mobile */
-    /* Basic Grid Layout */
-    body {
-      padding: 20px;
-    }
-    * {
-      box-sizing: border-box;
-    }
-
-    .flex-grid {
-      display: flex;
-      margin: 0 0 20px 0;
-      flex-direction: column;
-    }
-    .flex-grid .col {
-      flex: 1;
-    }
-    .col {
-      background: rgb(250, 128, 114);
-      padding: 20px;
-    }
-    .flex-grid-thirds {
-      display: flex;
-      justify-content: space-between;
-      text-align: center;
-    }
-    .flex-grid-thirds .col {
-      width: 32%;
-    }
-
-    /*  */
-
-    h1 {
-      text-align: center;
-    }
+/* --------- Basic Grid Layout --------- */
+body {
+  /* background-color: salmon; */
+  font-size: 13px;
+  line-height: 18px;
+  color: #333;
+  padding: 20px;
+}
+.flex-grid {
+  display: flex;
+  margin: 0 0 20px 0;
+}
+.flex-grid .col {
+  flex: 1;
+}
+.col {
+  /* border: 2px solid red; */
+  padding: 20px;
+}
+.flex-grid-links {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 45px;
+}
+.flex-grid-links .col {
+  width: 25%;
+}
+.flex-grid-header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 45px;
+}
+.flex-grid-header .col{
+  width: 50%;
 }
 
-/* Portrait */
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 1080px)
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) {
-
+/* ------- Container ---------- */
+.container {
+  /* border: 2px solid brown; */
+  font-family: 'Cute Font', cursive;
+  margin: 0 auto;
 }
 
-/* Landscape */
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 1080px)
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) {
+/* ----------- header --------- */
 
+header {
+  /* background-color: rgb(0, 0, 0); */
+  border-bottom: 3px solid salmon;
+  /* padding: 20px; */
 }
 
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-
-/* Portrait and Landscape */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-    body {
-      background-color: rgb(83, 161, 116);
-    }
-
+header a{
+  color: #333;
 }
 
-/* Portrait */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
+header #home{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: center;
+  align-items: baseline;
 }
 
-/* Landscape */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
+#brand-name a {
+  font-family: 'Sacramento', cursive;
+  color: salmon;
+  margin-left: 20px;
+  /* align-items: baseline; */
+}
 
+header #login{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+}
+
+header .current-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+#gravata img {
+  border: 3px solid salmon;
+  border-radius: 5em;
+  margin-right: 25px;
+}
+
+#gravata-name {
+  font-family: 'Cute Font', cursive;
+  font-size: 50px;
+  color: salmon;
+}
+
+header .link-login {
+  display: flex;
+  justify-content: flex-end;
+  text-align: left;
+  width: 100%;
+}
+
+header .admin-login {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  font-family: 'Cute Font', cursive;
+}
+
+h1 {
+  text-align: center;
+  padding: 50px;
+}
+
+a {
+  text-decoration: none;
 }
 
 
 
 
-/* ----------- Non-Retina Screens ----------- */
-@media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
 
-    header {
-      background-color: #fff;
-    }
+/* ------------- DEVICES --------------- */
+/* ----------- Small screen ----------- */
+@media only screen and (min-width: 540px) {
 
+  body {
+    /* background-color: rgb(169, 165, 177); */
+  }
 
-    body {
-      background-color: rgb(169, 233, 152);
-    }
+  #brand-name a {
+    font-size: 55px;
+  }
+
+  #gravata-name {
+    font-size: 100px;
+  }
+  #logout {
+    font-size: 45px;
+  }
+
+  header .admin-login {
+    font-size: 47px;
+  }
+
+  h1 {
+    font-size: 120px;
+  }
+}
+
+/* ----------- Large screen ----------- */
+@media only screen and (min-width: 992px) {
+
+  body {
+    /* background-color: rgb(30, 114, 41); */
+  }
+
+  #brand-name a {
+    font-size: 80px;
+  }
+
+  #gravata-name {
+    font-size: 60px;
+  }
+  #logout {
+    font-size: 35px;
+  }
+
+  header .admin-login {
+    font-size: 60px;
+  }
+
+  h1 {
+    font-size: 160px;
+  }
+}
+
+/* ----------- Extra large ----------- */
+@media only screen and (min-width: 1200px) {
+
+  body {
+    /* background-color: rgb(171, 173, 30); */
+  }
 }

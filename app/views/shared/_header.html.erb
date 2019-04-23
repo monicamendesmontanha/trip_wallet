@@ -1,26 +1,38 @@
-<header>
+<header class="flex-grid-header">
 
-  <nav>
+     <div class="col" id="home">
 
-     <div class="flex-grid">
-        <p><%= link_to "logo", root_path, id: "logo" %></p>
-        <p><%= link_to "Trip Wallet", root_path %></p>
+        <%= link_to root_path do %>
+           <i class="fas fa-money-check-alt fa-lg"></i>
+        <% end %>
+
+        <p id="brand-name"><%= link_to "Trip Wallet", root_path %></p>
     </div>
 
-     <div class="flex-grid">
-        <% if logged_in? %>
-          <p><%= gravatar_for current_user %> <%= current_user.name %></p>
-          <p><%= link_to "Log out", logout_path, method: :delete %></p>
-        <% else %>
-          <p><%= link_to "Log in", login_path %></p>
-        <% end %>
-        <% if admin? %>
-          <p><%= link_to "Users", '/users' %></p>
-          <p><%= link_to 'Destinations', destinations_path %></p>
-          <p><%= link_to 'Categories', expense_categories_path %></p>
-        <% end %>
-    </div>
+     <div class="col" id="login">
 
-  </nav>
+          <% if logged_in? %>
+            <div class="current-user">
+              <p id="gravata"><%= gravatar_for current_user %> </p>
+              <p id="gravata-name"><%= current_user.name %></p>
+            </div>
+
+            <div class="link-login">
+              <p id="logout"><%= link_to "Log out", logout_path, method: :delete %></p>
+            </div>
+
+          <% else %>
+            <p><%= link_to "Log in", login_path %></p>
+          <% end %>
+
+          <% if admin? %>
+            <div class="admin-login">
+              <p><%= link_to "Users", '/users' %></p>
+              <p><%= link_to 'Destinations', destinations_path %></p>
+              <p><%= link_to 'Categories', expense_categories_path %></p>
+            </div>
+          <% end %>
+
+    </div>
 
 </header>
