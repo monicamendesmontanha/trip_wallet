@@ -1,6 +1,8 @@
-<div class="flex-grid">
+<div class="flex-grid-thirds">
   <div class="col">
     <%= link_to 'My Trips', trips_path %>
+  </div>
+  <div class="col">
     <%= link_to 'Edit', edit_trip_path(@trip) %>
   </div>
 </div>
@@ -9,8 +11,12 @@
   <div class="col">
     <h1>Summary</h1>
   </div>
+</div>
 
-  <p id="notice"><%= notice %></p>
+<div class="flex-grid">
+  <div class="col">
+    <p id="notice"><%= notice %></p>
+  </div>
 </div>
 
 <div class="flex-grid">
@@ -35,16 +41,21 @@
       <%= @trip.end_date.strftime("%d/%m/%y") %>
     </p>
 
-    <%= bar_chart @data %>
 
+    <p>
+        <%= bar_chart @data, { responsive: true } %>
+    </p>
+
+  </div>
+</div>
+
+<div class="flex-grid">
+  <div class="col">
     <p>
       <strong>Budget Home:</strong>
       <%= " AUD $ #{@trip.budget}" %>
     </p>
-  </div>
 
-    </br>
-  <div class="col">
     <p>
       <strong>Budget Trip:</strong>
       <%= "#{@trip.destination.symbol} #{@trip.budget_based_on_destination}" %>
