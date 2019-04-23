@@ -1,27 +1,26 @@
 <header>
 
-    <%= link_to "logo", root_path, id: "logo" %>
+  <nav>
 
-    <nav>
-      <ul>
-        <li><%= link_to "My Trips", root_path %></li>
+     <div class="flex-grid">
+        <p><%= link_to "logo", root_path, id: "logo" %></p>
+        <p><%= link_to "Trip Wallet", root_path %></p>
+    </div>
 
-        <% if admin? %>
-          <li><%= link_to "Users", '/users' %></li>
-          <li><%= link_to 'Destinations', destinations_path %></li>
-          <li><%= link_to 'Categories', expense_categories_path %></li>
-        <% end %>
-
+     <div class="flex-grid">
         <% if logged_in? %>
-          <li><%= gravatar_for current_user %> <%= current_user.name %></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <p><%= gravatar_for current_user %> <%= current_user.name %></p>
+          <p><%= link_to "Log out", logout_path, method: :delete %></p>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <p><%= link_to "Log in", login_path %></p>
         <% end %>
+        <% if admin? %>
+          <p><%= link_to "Users", '/users' %></p>
+          <p><%= link_to 'Destinations', destinations_path %></p>
+          <p><%= link_to 'Categories', expense_categories_path %></p>
+        <% end %>
+    </div>
 
-      </ul>
-    </nav>
-
-  </div>
+  </nav>
 
 </header>

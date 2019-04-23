@@ -1,61 +1,81 @@
-<%= link_to 'My Trips', trips_path %> |
-<%= link_to 'Edit', edit_trip_path(@trip) %>
+<div class="flex-grid">
+  <div class="col">
+    <%= link_to 'My Trips', trips_path %>
+    <%= link_to 'Edit', edit_trip_path(@trip) %>
+  </div>
+</div>
 
-<h1>Summary</h1>
+<div class="flex-grid">
+  <div class="col">
+    <h1>Summary</h1>
+  </div>
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
+</div>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @trip.destination.name %>
-</p>
+<div class="flex-grid">
+  <div class="col">
+    <p>
+      <strong>Destination:</strong>
+      <%= @trip.destination.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @trip.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @trip.name %>
+    </p>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @trip.start_date.strftime("%d/%m/%y") %>
-</p>
+    <p>
+      <strong>Start date:</strong>
+      <%= @trip.start_date.strftime("%d/%m/%y") %>
+    </p>
 
-<p>
-  <strong>End date:</strong>
-  <%= @trip.end_date.strftime("%d/%m/%y") %>
-</p>
+    <p>
+      <strong>End date:</strong>
+      <%= @trip.end_date.strftime("%d/%m/%y") %>
+    </p>
 
-<%= bar_chart @data %>
+    <%= bar_chart @data %>
 
-<p>
-  <strong>Budget Home:</strong>
-  <%= " AUD $ #{@trip.budget}" %>
-</p>
+    <p>
+      <strong>Budget Home:</strong>
+      <%= " AUD $ #{@trip.budget}" %>
+    </p>
+  </div>
 
-</br>
+    </br>
+  <div class="col">
+    <p>
+      <strong>Budget Trip:</strong>
+      <%= "#{@trip.destination.symbol} #{@trip.budget_based_on_destination}" %>
+    </p>
 
+    <p>
+      Expense Total: <%= @trip.total_amount %>
+    </p>
 
-<p>
-  <strong>Budget Trip:</strong>
-  <%= "#{@trip.destination.symbol} #{@trip.budget_based_on_destination}" %>
-</p>
+    <p>
+      Remaining: <%= @trip.remaining %>
+    </p>
 
-<p>
-  Expense Total: <%= @trip.total_amount %>
-</p>
+    <p>
+      % remaining: <%= "#{(@trip.percentual_remaining).round(2)} %" %>
+    </p>
 
-<p>
-  Remaining: <%= @trip.remaining %>
-</p>
+    <p>
+      Daily Budget: <%= (@trip.daily_budget).round(2) %> (<%= @trip.number_of_days %>)
+    </p>
+  </div>
+</div>
 
-<p>
-  % remaining: <%= "#{(@trip.percentual_remaining).round(2)} %" %>
-</p>
-
-<p>
-  Daily Budget: <%= (@trip.daily_budget).round(2) %> (<%= @trip.number_of_days %>)
-</p>
-
-<%= link_to 'Chart', chart_path(@trip.id) %> |
-<%= link_to 'Add Expense', add_expense_path(@trip.id) %> |
-<%= link_to 'History', "/trips/#{@trip.id}/expenses/history" %>
+<div class="flex-grid-thirds">
+  <div class="col">
+    <%= link_to 'Chart', chart_path(@trip.id) %>
+  </div>
+  <div class="col">
+    <%= link_to 'Add Expense', add_expense_path(@trip.id) %>
+  </div>
+  <div class="col">
+    <%= link_to 'History', "/trips/#{@trip.id}/expenses/history" %>
+  </div>
+</div>
