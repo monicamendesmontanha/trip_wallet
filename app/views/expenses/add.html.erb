@@ -1,6 +1,15 @@
-<%= link_to 'Summary', "/trips/#{@trip.id}/" %>
+<div class="flex-grid-links">
+  <div class="col navigation">
+    <%= link_to 'Summary', "/trips/#{@trip.id}/" %>
+  </div>
+</div>
 
-<h1>Add Expense</h1>
+<div class="flex-grid">
+  <div class="col">
+      <h1>Add Expense</h1>
+ </div>
+</div>
+
 
 <div>
   Trip: <%= @trip.name %>
@@ -45,8 +54,10 @@
     <%= form.label :expense_category_id %>
     <%= form.select :expense_category_id, ExpenseCategory.all.map { |e| [e.name, e.id] }, include_blank: 'Please choose' %>
   </div>
-  <div class="actions">
-    <%= form.submit %>
+  <div class="flex-grid-links actions"">
+    <div class="col actions">
+      <%= form.submit %>
+    </div>
   </div>
 
 <% end %>
