@@ -2,7 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Cute+Font');
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
-/* --------- Basic Grid Layout --------- */
+/* ------------------------------------------ */
+/* ---------------- Container --------------- */
+.container {
+  /* border: 2px solid brown; */
+  font-family: 'Cute Font', cursive;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  padding: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------------------------------------------ */
+/* ------------ Basic Grid Layout ----------- */
 body {
   /* background-color: salmon; */
   font-size: 13px;
@@ -26,10 +43,13 @@ body {
   justify-content: space-between;
   text-align: center;
   font-size: 45px;
+  align-items: center;
 }
-.flex-grid-links .col {
-  width: 25%;
-}
+
+
+/* ------------------------------------------ */
+/* ----------------- HEADER ---------------- */
+
 .flex-grid-header {
   display: flex;
   justify-content: space-between;
@@ -40,18 +60,9 @@ body {
   width: 50%;
 }
 
-/* ------- Container ---------- */
-.container {
-  /* border: 2px solid brown; */
-  font-family: 'Cute Font', cursive;
-  margin: 0 auto;
-}
-
-/* ----------- header --------- */
-
 header {
   /* background-color: rgb(0, 0, 0); */
-  border-bottom: 3px solid salmon;
+  border-bottom: 4px solid salmon;
   /* padding: 20px; */
 }
 
@@ -65,6 +76,7 @@ header #home{
   justify-content: flex-start;
   text-align: center;
   align-items: baseline;
+  margin-top: 20px;
 }
 
 #brand-name a {
@@ -108,6 +120,7 @@ header .link-login {
   justify-content: flex-end;
   text-align: left;
   width: 100%;
+  font-family: 'Sacramento', cursive;
 }
 
 header .admin-login {
@@ -118,49 +131,167 @@ header .admin-login {
   padding: 30px;
   font-family: 'Cute Font', cursive;
 }
+/* ------------------------------------------- */
+/* ---------- LAYOUT LINKS NAVIGATION -------- */
+.flex-grid-links .navigation {
+  /* border: 1px solid #333; */
+  /* background-color: #ccc; */
+  width: 50%;
+  font-size: 50px;
+  letter-spacing: 5px;
+  margin-top: 5px;
 
-h1 {
+}
+.flex-grid-links .navigation a {
+  color: #666;
+}
+
+/* ---------------------------------------------------------- */
+/* ----------- LAYOUT MY TRIP SUMMARY • NAME & DATE --------- */
+
+.flex-grid .name-trip {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 80px;
+  padding: 20px;
+}
+
+.flex-grid .name-trip p:nth-child(2) {
+  font-size: 65px;
+  margin-left: 30px;
+  color: #666;
+}
+
+.flex-grid .name-trip p:nth-child(2) i{
+  color: salmon;
+}
+
+.flex-grid .date-trip {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 50px;
+}
+
+.flex-grid .date-trip i {
+  color: salmon;
+}
+.flex-grid .date-trip p:nth-child(2) {
+  margin-left: 30px;
+}
+
+/* ---------------------------------------------------------- */
+/* ----------- LAYOUT MY TRIP SUMMARY • INFO BUDGET --------- */
+
+.flex-grid .all-budget {
+  /* border: 1px solid orange; */
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-grid .budget-trip {
+  /* border: 1px solid yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 50px;
+  padding: 20px;
+  letter-spacing: 1px;
+  width: 70%;
+  line-height: 50px;
+}
+.flex-grid .budget-trip i {
+  color: #666;
+}
+.flex-grid .budget-trip span {
+  color: salmon;
+}
+.flex-grid .expense-trip {
+  /* border: 1px solid yellow; */
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding: 50px;
+  font-size: 60px;
+  padding: 20px;
+  letter-spacing: 1px;
+  width: 30%;
+  line-height: 70px;
+}
+.flex-grid .expense-trip i {
+  color: #666;
+}
+.flex-grid .expense-trip p:first-child {
+  text-align: center;
+  font-size: 45px;
+  color: salmon;
 }
 
-a {
-  text-decoration: none;
+/* .flex-grid .expense-trip-info {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  font-size: 35px;
+  padding: 20px;
+  letter-spacing: 1px;
+  width: 100%;
+  line-height: 50px;
+} */
+
+
+
+
+
+
+/* -------------------------------------------- */
+/* ------------ LAYOUT LINKS ACTIONS ---------- */
+.flex-grid-links .actions {
+  /* border: 1px solid #333; */
+  border-top: 4px dashed salmon;
+  width: 20%;
+  height: 50px;
+}
+
+.flex-grid-links .actions a {
+  color: salmon;
 }
 
 
 
 
-
-/* ------------- DEVICES --------------- */
-/* ----------- Small screen ----------- */
+/* -------------------------------------------- */
+/* ------------- DEVICES ---------------------- */
+/* -------------------------------------------- */
+/* -------------- Small screen ---------------- */
 @media only screen and (min-width: 540px) {
 
   body {
     /* background-color: rgb(169, 165, 177); */
   }
-
   #brand-name a {
     font-size: 55px;
   }
-
   #gravata-name {
     font-size: 100px;
   }
   #logout {
-    font-size: 45px;
+    font-size: 48px;
   }
-
+  .flex-grid-links .actions a {
+    font-size: 50px;
+  }
   header .admin-login {
     font-size: 47px;
   }
-
   h1 {
     font-size: 120px;
   }
 }
 
-/* ----------- Large screen ----------- */
+/* -------------------------------------------- */
+/* ------------ Large screen ------------------ */
 @media only screen and (min-width: 992px) {
 
   body {
@@ -172,22 +303,27 @@ a {
   }
 
   #gravata-name {
-    font-size: 60px;
+    font-size: 50px;
   }
   #logout {
-    font-size: 35px;
+    font-size: 40px;
   }
-
+  .flex-grid-links .actions a {
+    font-size: 60px;
+    letter-spacing: 5px;
+  }
   header .admin-login {
     font-size: 60px;
   }
-
   h1 {
     font-size: 160px;
   }
 }
 
-/* ----------- Extra large ----------- */
+
+
+/* -------------------------------------------- */
+/* --------------- Extra large ---------------- */
 @media only screen and (min-width: 1200px) {
 
   body {
