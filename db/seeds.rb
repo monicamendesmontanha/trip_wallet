@@ -6,13 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 ExpenseCategory.destroy_all
+admin = User.find_by_email('admin@example.com')
+if admin != nil
+  admin.destroy!
+end
 
-ExpenseCategory.create([
-  { name: 'Food' },
+ExpenseCategory.create!([
   { name: 'Accomodation' },
-  { name: 'Transport' },
   { name: 'Entertainment' },
-  { name: 'Miscellaneous' }
+  { name: 'Food' },
+  { name: 'Miscellaneous' },
+  { name: 'Shopping' },
+  { name: 'Transport' },
+  { name: 'Uncategorized' }
 ])
 
-User.create(email: 'admin@example.com', name: 'Admin', password: 'adminadmin', admin: true)
+User.create!(email: 'admin@example.com', name: 'Admin', password: ENV['ADMIN_PASSWORD'], admin: true)
