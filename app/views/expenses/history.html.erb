@@ -1,16 +1,35 @@
-<%= link_to 'Summary', "/trips/#{@trip.id}/" %> |
-<%= link_to 'Add Expense', add_expense_path(@trip.id) %>
+  <div class="flex-grid-links">
+    <div class="col navigation">
+        <%= link_to 'Summary', "/trips/#{@trip.id}/" %>
+    </div>
+    <div class="col navigation">
+        <%= link_to 'Add Expense', add_expense_path(@trip.id) %>
+    </div>
+  </div>
 
-<h1>History</h1>
-<p id="notice"><%= notice %></p>
+<div class="flex-grid">
+  <div class="col">
+    <h1>History</h1>
+  </div>
+</div>
 
-<div>
-  Trip: <%= @trip.name %>
+<div class="flex-grid">
+  <div class="col">
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
+
+<div class="flex-grid">
+  <div class="col" id="trip-info-history">
+    <p>Trip:</p>
+    <p><%= @trip.name %></p>
+  </div>
 </div>
 
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Amount</th>
       <th>Notes</th>
       <th>Date</th>
@@ -37,6 +56,9 @@
 
 <br>
 
-<div>
-  Total: <%= @trip.total_amount %>
+<div class="flex-grid-links actions"">
+  <div class="col" id="trip-info-history">
+    <p>Total:</p>
+    <p><%= "#{@trip.destination.symbol} #{@trip.total_amount}" %></p>
+  </div>
 </div>

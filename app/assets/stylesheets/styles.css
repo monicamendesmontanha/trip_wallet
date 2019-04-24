@@ -254,7 +254,7 @@ header .admin-login {
 }
 
 /* -------------------------------------------- */
-/* ------------ INDEX PAGE ------------- */
+/* ---------- TRIP INDEX PAGE ----------------- */
 
 table, th, td {
   /* border: 1px solid black; */
@@ -271,8 +271,7 @@ thead {
   border-bottom: 1px solid #ccc;
 }
 tbody {
-  color: #ccc;
-  font-size: 60px;
+  /* particularized on each device */
 }
 
 tbody a {
@@ -286,7 +285,7 @@ th {
 }
 
 td {
-  height: 30px;
+  height: 20px;
   vertical-align: center;
 }
 
@@ -299,6 +298,18 @@ th, td {
   width: 100%;
 }
 
+/* -------------------------------------------- */
+/* ----------- EXPENSE HISTORY PAGE ----------- */
+
+#trip-info-history {
+  display: flex;
+  font-size: 58px;
+}
+#trip-info-history p:first-child {
+  color: #ccc;
+  margin-right: 15px;
+  font-size: 48px;
+}
 
 
 /* -------------------------------------------- */
@@ -328,6 +339,12 @@ th, td {
   h1 {
     font-size: 120px;
   }
+  tbody {
+    font-size: 45px;
+    color: #666;
+  }
+
+
 }
 
 /* -------------------------------------------- */
@@ -360,6 +377,10 @@ th, td {
   }
   .submit-button input {
     padding: 10px;
+  }
+  tbody {
+    font-size: 60px;
+    color: #ccc;
   }
 }
 
