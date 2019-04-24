@@ -311,6 +311,73 @@ th, td {
   font-size: 48px;
 }
 
+/* -------------------------------------------- */
+/* ----------- LOGIN FORM PAGE ----------- */
+
+/* GENERAL FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  border: 3px dashed #333;
+  border-radius: 2em;
+  background-color: salmon;
+  margin: auto;
+  width: 90%;
+}
+
+/* INSIDE THE FORM */
+.flex-grid #login-form {
+  display: flex;
+  flex-direction: row;
+  font-size: 65px;
+  margin-top: 60px;
+  /* padding-left: particularized on each device */
+}
+
+/* LABEL LOGIN POSTION */
+#login-form label {
+  display: block;
+  width: 220px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* INPUT TO ENTER EMAIL & PASSWORD */
+#login-form input {
+  color: salmon;
+  font-size: 30px;
+  border: 1px solid #333;
+  border-radius: 0.3em;
+  min-width: 150px;
+  margin-left: 35px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* LOGIN SUBMIT BUTTON */
+.col [type=submit] {
+  background-color: #ccc;
+  border: 3px solid #666;
+  color: white;
+}
+
+/* SIGNUP NOW - BAR */
+#submit-button {
+  background-color: #ccc;
+  border: 2px solid #666;;
+  border-radius: 0.3em;
+  text-align: center;
+  font-size: 75px;
+  padding: 10px;
+  margin: auto;
+  width: 90%;
+}
+
+#submit-button a {
+  color: white;
+}
+
+
 
 /* -------------------------------------------- */
 /* ------------- DEVICES ---------------------- */
@@ -344,12 +411,15 @@ th, td {
     color: #666;
   }
 
+  .flex-grid #login-form {
+    padding-left: 120px;
+  }
 
 }
 
 /* -------------------------------------------- */
 /* ------------ Large screen ------------------ */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1200px) {
 
   body {
     /* background-color: rgb(30, 114, 41); */
@@ -382,15 +452,7 @@ th, td {
     font-size: 60px;
     color: #ccc;
   }
-}
-
-
-
-/* -------------------------------------------- */
-/* --------------- Extra large ---------------- */
-@media only screen and (min-width: 1200px) {
-
-  body {
-    /* background-color: rgb(171, 173, 30); */
+  .flex-grid #login-form {
+    padding-left: 320px;
   }
 }

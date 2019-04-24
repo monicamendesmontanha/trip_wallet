@@ -1,13 +1,31 @@
-<% provide(:title, "Log in") %>
+<div class="login-name">
+  <% provide(:title, "Log in") %>
+</div>
 
-<h1>Log in</h1>
+<div class="flex-grid">
+  <div class="col">
+    <h1>Log in</h1>
+  </div>
+</div>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log in" %>
-<% end %>
+<div class="flex-grid">
+  <%= form_for(:session, url: login_path) do |f| %>
+  <div class="col" id="login-form">
+      <p><%= f.label :email %></p>
+      <p><%= f.email_field :email %></p>
+  </div>
+  <div class="col" id="login-form">
+      <p><%= f.label :password %></p>
+      <p><%= f.password_field :password %></p>
+  </div>
+  <div class="col" id="login-form">
+     <p><%= f.submit "Log in" %></p>
+  </div>
+    <% end %>
+</div>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<div class="flex-grid" id="submit-button">
+  <div class="col">
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
