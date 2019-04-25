@@ -1,26 +1,32 @@
 # Project #1: Trip Wallet
 
-This is my first project mobile using Ruby on Rails and PostgreSQL.
+This is my first project mobile using **Ruby on Rails** and PostgreSQL. </br>
 [Link to live site](https://trip-wallet.herokuapp.com) Project 1: "Trip Wallet"
 
+Keep track of your expenses while travelling.
+Enjoy travelling and saving money at the same time.
+Store and visualise all your expenses organized by category.
+
+More features coming soon:
+- Automatically conversion rates by tailored settings;
 
 
-### Initial page showing a list with all trips
+### Listing trips
 <img width="429" alt="Screen Shot 2019-04-25 at 22 08 49" src="https://user-images.githubusercontent.com/33978352/56734860-51bc3900-67a7-11e9-892b-2128c7c4290b.png">
 
-### Form to add a new trip
+### Adding a new trip
 <img width="428" alt="Screen Shot 2019-04-25 at 22 09 11" src="https://user-images.githubusercontent.com/33978352/56734862-51bc3900-67a7-11e9-8fbc-bb78f7e07563.png">
 
-### Summary Trip
+### Summary of the trip
 <img width="431" alt="Screen Shot 2019-04-25 at 22 07 24" src="https://user-images.githubusercontent.com/33978352/56734853-508b0c00-67a7-11e9-8007-c1f9c022812f.png">
 
-### Add expense page
+### Adding expense
 <img width="435" alt="Screen Shot 2019-04-25 at 22 07 49" src="https://user-images.githubusercontent.com/33978352/56734855-5123a280-67a7-11e9-83a9-ff22e1c6692c.png">
 
-### History showing a list with all expenses
+### History of all expenses
 <img width="430" alt="Screen Shot 2019-04-25 at 22 08 12" src="https://user-images.githubusercontent.com/33978352/56734857-5123a280-67a7-11e9-8f2a-b133e3e8d173.png">
 
-### Chart showing how much have been spending in each category
+### Expenses by category
 <img width="428" alt="Screen Shot 2019-04-25 at 22 08 27" src="https://user-images.githubusercontent.com/33978352/56734858-5123a280-67a7-11e9-85ce-0cd367f275be.png">
 
 
