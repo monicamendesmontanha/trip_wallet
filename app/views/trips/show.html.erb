@@ -58,22 +58,22 @@
       <p>
         <i class="fas fa-wallet"></i>
         <span>Budget Trip:</span>
-        <%= "#{@trip.destination.symbol} #{@trip.budget_based_on_destination}" %>
+        <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.budget_based_on_destination, precision: 2)}" %>
       </p>
       <p>
         <span>Daily Budget:</span>
-        <%= "#{@trip.destination.symbol} #{(@trip.daily_budget).round(2)}" %> (<%= @trip.number_of_days %>)
+        <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.daily_budget , precision: 2)}" %> (<%= @trip.number_of_days %>)
       </p>
       </br>
       <p>
         <i class="fas fa-coins"></i>
         <span>Remaining:</span>
-        <%= "#{@trip.destination.symbol} #{@trip.remaining}" %>
+        <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.remaining , precision: 2)}" %>
       </p>
       <p>
         <%# <span>% remaining:</span> %>
         <i class="fas fa-percentage"></i>
-        <%= "#{(@trip.percentual_remaining).round(2)}" %>
+        <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.percentual_remaining , precision: 2)}" %>
       </p>
     </div>
 
@@ -84,7 +84,7 @@
     </p>
     <p>
       <%# <span>Total:</span> %>
-      <%= "#{@trip.destination.symbol} #{@trip.total_amount}" %>
+      <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.total_amount, precision: 2)}" %>
     </p>
   </div>
 
