@@ -1,5 +1,17 @@
-<%= link_to 'My Trips', trips_path %>
+  <div class="flex-grid-links">
+   <div class="col navigation">
+    <%= link_to 'My Trips', trips_path %>
+  </div>
+</div>
 
-<h1>New Trip</h1>
+<div class="flex-grid">
+  <div class="col">
+    <h1>New Trip</h1>
+  </div>
+</div>
 
-<%= render 'form', trip: @trip %>
+<div class="flex-grid">
+  <div class="col">
+    <%= render 'form', trip: @trip %>
+  </div>
+</div>

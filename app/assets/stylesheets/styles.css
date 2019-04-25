@@ -348,22 +348,51 @@ form .col {
 }
 
 /* INPUT TO ENTER EMAIL & PASSWORD */
-#login-form input {
+#login-form input, select {
   color: salmon;
   font-size: 30px;
   border: 1px solid #333;
   border-radius: 0.3em;
-  min-width: 150px;
   margin-left: 35px;
-  /* padding-left: 25px; */
-  /* padding-right: 25px; */
+  min-width: 350px;
+}
+
+input {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#login-form ::placeholder {
+  color: #ccc;
+  text-align: left;
 }
 
 /* LOGIN SUBMIT BUTTON */
-.col [type=submit] {
+.form-submit {
+  /* border: solid 2px blue; */
+  padding: 0;
+  display: flex;
+  justify-content: end;
+}
+.form-submit-placeholder {
+  width: 100%;
+}
+
+.form-submit-action {
+  width: 25%;
+  padding: 20px;
+}
+
+.form-submit-action > * {
+  width: 100%;
+}
+
+.form-submit-action [type=submit] {
   background-color: #ccc;
-  border: 3px solid #666;
-  color: white;
+  border: 3px solid #333;
+  border-radius: 0.3em;
+  color: #333;
+  font-size: 35px;
 }
 
 /* SIGNUP NOW - BAR */
@@ -416,9 +445,14 @@ form .col {
     font-size: 45px;
     color: #666;
   }
-
   .flex-grid #login-form {
     padding-left: 120px;
+  }
+  #login-form select {
+    min-width: 380px;
+  }
+  .form-submit-action [type=submit] {
+    font-size: 25px;
   }
 
 }
@@ -460,5 +494,12 @@ form .col {
   }
   .flex-grid #login-form {
     padding-left: 320px;
+  }
+
+  #login-form select {
+    min-width: 382px;
+  }
+  .form-submit-action [type=submit] {
+    font-size: 35px;
   }
 }

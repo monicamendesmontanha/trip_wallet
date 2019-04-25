@@ -18,8 +18,10 @@
       <p><%= f.label :password %></p>
       <p><%= f.password_field :password %></p>
   </div>
-  <div class="col" id="login-form">
-     <p><%= f.submit "Log in" %></p>
+
+  <div class="col form-submit">
+    <div class="form-submit-placeholder"></div>
+    <div class="form-submit-action"><%= f.submit "Log in" %></div>
   </div>
     <% end %>
 </div>
