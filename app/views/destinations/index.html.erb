@@ -1,4 +1,14 @@
-<%= link_to 'My Trips', trips_path %>
+<div class="flex-grid-links">
+  <div class="col navigation">
+    <%= link_to 'My Trips', trips_path %>
+  </div>
+</div>
+
+<div class="flex-grid">
+  <div class="col">
+    <h1>Destinations</h1>
+  </div>
+</div>
 
 <% if notice != nil %>
   <div class="flex-grid">
@@ -8,15 +18,15 @@
   </div>
 <% end %>
 
-<h1>Destinations</h1>
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Currency</th>
       <th>Symbol</th>
       <th>Exchange rate</th>
-      <th colspan="3"></th>
+      <%# <th colspan="3"></th> %>
     </tr>
   </thead>
   <tbody>
@@ -32,5 +42,9 @@
     <% end %>
   </tbody>
 </table>
-<br>
-<%= link_to 'New Destination', new_destination_path %>
+
+<div class="flex-grid-links actions">
+  <div class="col actions" id="single-link">
+    <%= link_to 'New Destination', new_destination_path %>
+  </div>
+</div>
