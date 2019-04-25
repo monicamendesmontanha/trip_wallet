@@ -54,7 +54,6 @@ class ExpensesController < ApplicationController
     expense.destroy
     respond_to do |format|
       format.html { redirect_to history_expense_path(expense.trip.id), notice: 'Expense was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
