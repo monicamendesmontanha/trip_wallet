@@ -1,17 +1,21 @@
-<%= form_with(model: trip, local: true) do |form| %>
+<div class="flex-grid">
+  <div class="col">
+    <% if trip.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
 
-  <% if trip.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+        <ul>
+        <% trip.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-      <ul>
-      <% trip.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<div class="flex-grid">
+    <%= form_with(model: trip, local: true) do |form| %>
 
   <div>
     <div class="col" id="login-form">
@@ -45,3 +49,4 @@
     <div class="form-submit-action"><%= form.submit %></div>
   </div>
 <% end %>
+</div>
