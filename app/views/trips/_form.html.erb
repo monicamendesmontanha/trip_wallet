@@ -17,7 +17,7 @@
       </div>
       <div class="col" id="login-form">
         <%= form.label :budget %>
-        <%= form.number_field :budget, placeholder: "AUD $   1000.00" %>
+        <%= form.number_field :budget, step: :any, precision: 2, pattern: "\d*", placeholder: "AUD $   1000.00" %>
       </div>
       <div class="col" id="login-form">
         <%= form.label :destination %>
