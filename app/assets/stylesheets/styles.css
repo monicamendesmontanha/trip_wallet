@@ -416,8 +416,6 @@ input {
 
 #error_explanation {
   text-align: center;
-  font-size: 38px;
-  line-height: 41px;
   border: 20px double #ccc;
   border-radius: 0.3em;
   background-color: #333;
@@ -426,6 +424,9 @@ input {
   padding: 10px;
   margin-top: 40px;
   color: #fff;
+  line-height: 41px;
+  font-size: 38px;
+  letter-spacing: 2px;
 }
 #error_explanation h2{
   color: salmon;
