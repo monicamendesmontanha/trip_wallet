@@ -1,6 +1,11 @@
-<%= link_to 'Edit', edit_expense_category_path(@expense_category) %> |
-<%= link_to 'Back', expense_categories_path %>
-
+<div class="flex-grid-links">
+  <div class="col navigation">
+    <%= link_to 'Edit', edit_expense_category_path(@expense_category) %>
+  </div>
+  <div class="col navigation">
+    <%= link_to 'Back', expense_categories_path %>
+  </div>
+</div>
 
 <% if notice != nil %>
   <div class="flex-grid">

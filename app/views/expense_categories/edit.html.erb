@@ -1,6 +1,17 @@
-<%= link_to 'Show', @expense_category %> |
-<%= link_to 'Back', expense_categories_path %>
+<div class="flex-grid-links">
+  <div class="col navigation">
+    <%= link_to 'Show', @expense_category %>
+  </div>
+  <div class="col navigation">
+    <%= link_to 'Back', expense_categories_path %>
+ </div>
+</div>
 
-<h1>Editing Expense Category</h1>
+<div class="flex-grid">
+  <div class="col">
+    <h1>Editing Expense Category</h1>
+ </div>
+</div>
+
 
 <%= render 'form', expense_category: @expense_category %>

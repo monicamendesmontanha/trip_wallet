@@ -1,6 +1,8 @@
-<%= link_to 'My Trips', trips_path %>
-
-
+<div class="flex-grid">
+  <div class="col">
+    <h1>Expense Categories</h1>
+  </div>
+</div>
 
 <% if notice != nil %>
   <div class="flex-grid">
@@ -9,9 +11,6 @@
     </div>
   </div>
 <% end %>
-
-
-<h1>Expense Categories</h1>
 
 <table>
   <thead>
@@ -32,6 +31,8 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Expense Category', new_expense_category_path %>
+<div class="flex-grid-links actions">
+  <div class="col actions" id="single-link">
+    <%= link_to 'New Expense Category', new_expense_category_path %>
+  </div>
+</div>

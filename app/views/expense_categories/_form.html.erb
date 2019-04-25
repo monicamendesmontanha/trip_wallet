@@ -1,13 +1,16 @@
-<%= render 'shared/error_messages', locals: { errors: @trip.errors } %>
+<%= render 'shared/error_messages', locals: { errors: expense_category.errors } %>
 
-<%= form_with(model: expense_category, local: true) do |form| %>
+<div class="flex-grid">
+  <%= form_with(model: expense_category, local: true) do |form| %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, autofocus: true %>
-  </div>
+    <div class="col" id="login-form">
+      <%= form.label :name %>
+      <%= form.text_field :name, autofocus: true %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="col form-submit">
+      <div class="form-submit-placeholder"></div>
+      <div class="form-submit-action"><%= form.submit "Create" %></div>
+    </div>
+  <% end %>
+</div>
