@@ -1,6 +1,8 @@
 # Project #1: Trip Wallet
 
-This is my first project using Ruby on Rails and PostgreSQL. </br>
+This is my first project mobile using Ruby on Rails and PostgreSQL.
+[Link to live site](https://trip-wallet.herokuapp.com) Project 1: "Trip Wallet"
+
 
 
 ### Initial page showing a list with all trips
