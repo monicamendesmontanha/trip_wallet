@@ -52,8 +52,6 @@
 <div class="flex-grid">
   <div class="col all-budget">
 
-      <%# <strong>Budget Home:</strong>
-      <%= " AUD $ #{@trip.budget}" %>
     <div class="budget-trip">
       <p>
         <i class="fas fa-wallet"></i>
@@ -71,7 +69,6 @@
         <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.remaining , precision: 2)}" %>
       </p>
       <p>
-        <%# <span>% remaining:</span> %>
         <i class="fas fa-percentage"></i>
         <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.percentual_remaining , precision: 2)}" %>
       </p>
@@ -83,7 +80,6 @@
       <span>EXPENSES:</span>
     </p>
     <p>
-      <%# <span>Total:</span> %>
       <%= "#{@trip.destination.symbol} #{number_with_precision(@trip.total_amount, precision: 2)}" %>
     </p>
   </div>
