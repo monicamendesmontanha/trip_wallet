@@ -5,7 +5,7 @@
 
     <div class="col" id="login-form">
       <%= form.label :name %>
-      <%= form.text_field :name, autofocus: true %>
+      <%= form.text_field :name, autofocus: true, :required => true  %>
     </div>
 
     <div class="col" id="login-form">
@@ -15,12 +15,12 @@
 
     <div class="col" id="login-form">
       <%= form.label :symbol %>
-      <%= form.text_field :symbol %>
+      <%= form.text_field :symbol  %>
     </div>
 
     <div class="col" id="login-form">
       <%= form.label :exchange_rate, "Rate" %>
-      <%= form.text_field :exchange_rate %>
+      <%= form.text_field :exchange_rate, :required => true  %>
     </div>
 
     <div class="col form-submit">
