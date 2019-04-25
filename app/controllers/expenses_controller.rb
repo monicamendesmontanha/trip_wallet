@@ -44,7 +44,7 @@ class ExpensesController < ApplicationController
       if @expense.save
         format.html { redirect_to trip_path(@expense.trip.id), notice: 'Expense was successfully created.' }
       else
-        format.html { redirect_to trip_path(@expense.trip.id), flash: { errors: @expense.errors.full_messages } }
+        format.html { redirect_to add_expense_path(@expense.trip.id), flash: { errors: @expense.errors.full_messages } }
       end
     end
   end

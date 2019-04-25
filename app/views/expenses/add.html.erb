@@ -18,13 +18,7 @@
  </div>
 </div>
 
-
-<div class="flex-grid">
-<%= form_with(model: @expense) do |form| %>
-
-  <%= form.hidden_field :trip_id, value: @trip.id %>
-
-  <div class="col">
+<div class="col">
   <% if flash[:errors] != nil %>
     <div id="error_explanation">
       <ul>
@@ -36,30 +30,35 @@
   <% end %>
 </div>
 
-  <div class="col" id="login-form">
-    <%= form.label :amount %>
-    <%= form.number_field :amount, autofocus: true, pattern: "\d*", placeholder: "AUD $   6.00" %>
-  </div>
-  <div class="col" id="login-form">
-    <%= form.label :notes %>
-    <%= form.text_field :notes, placeholder: "Coffee" %>
-  </div>
-
-  <div class="col" id="login-form">
-    <%= form.label :expense_date, "Date" %>
-    <%= form.date_field :expense_date, min: @trip.start_date, value: Date.today  %>
-  </div>
-  <div class="col" id="login-form">
-    <%= form.label :expense_category_id, "Category" %>
-    <%= form.select :expense_category_id, ExpenseCategory.all.map { |e| [e.name, e.id] }, include_blank: 'Please choose' %>
-  </div>
+<div class="flex-grid">
+  <%= form_with(model: @expense) do |form| %>
+    <%= form.hidden_field :trip_id, value: @trip.id %>
 
 
-  <div class="col form-submit">
-    <div class="form-submit-placeholder"></div>
-    <div class="form-submit-action"><%= form.submit "Add expense"%></div>
-  </div>
+    <div class="col" id="login-form">
+      <%= form.label :amount %>
+      <%= form.number_field :amount, autofocus: true, pattern: "\d*", placeholder: "AUD $   6.00" %>
+    </div>
 
-<% end %>
+    <div class="col" id="login-form">
+      <%= form.label :notes %>
+      <%= form.text_field :notes, placeholder: "Coffee" %>
+    </div>
 
+    <div class="col" id="login-form">
+      <%= form.label :expense_date, "Date" %>
+      <%= form.date_field :expense_date, min: @trip.start_date, value: Date.today  %>
+    </div>
+
+    <div class="col" id="login-form">
+      <%= form.label :expense_category_id, "Category" %>
+      <%= form.select :expense_category_id, ExpenseCategory.all.map { |e| [e.name, e.id] }, include_blank: 'Please choose' %>
+    </div>
+
+    <div class="col form-submit">
+      <div class="form-submit-placeholder"></div>
+      <div class="form-submit-action"><%= form.submit "Add expense"%></div>
+    </div>
+
+  <% end %>
 </div>
