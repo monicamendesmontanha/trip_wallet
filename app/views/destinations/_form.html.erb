@@ -1,28 +1,31 @@
-<%= render 'shared/error_messages', locals: { errors: @trip.errors } %>
+<%= render 'shared/error_messages', locals: { errors: destination.errors } %>
 
-<%= form_with(model: destination, local: true) do |form| %>
+<div class="flex-grid">
+  <%= form_with(model: destination, local: true) do |form| %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, autofocus: true %>
-  </div>
+    <div class="col" id="login-form">
+      <%= form.label :name %>
+      <%= form.text_field :name, autofocus: true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :currency %>
-    <%= form.text_field :currency %>
-  </div>
+    <div class="col" id="login-form">
+      <%= form.label :currency %>
+      <%= form.text_field :currency %>
+    </div>
 
-  <div class="field">
-    <%= form.label :symbol %>
-    <%= form.text_field :symbol %>
-  </div>
+    <div class="col" id="login-form">
+      <%= form.label :symbol %>
+      <%= form.text_field :symbol %>
+    </div>
 
-  <div class="field">
-    <%= form.label :exchange_rate %>
-    <%= form.text_field :exchange_rate %>
-  </div>
+    <div class="col" id="login-form">
+      <%= form.label :exchange_rate, "Rate" %>
+      <%= form.text_field :exchange_rate %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="col form-submit">
+      <div class="form-submit-placeholder"></div>
+      <div class="form-submit-action"><%= form.submit %></div>
+    </div>
+  <% end %>
+</div>

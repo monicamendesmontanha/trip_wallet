@@ -1,5 +1,15 @@
-<%= link_to 'Back', destinations_path %>
-<h1>New Destination</h1>
+<div class="flex-grid-links">
+  <div class="col navigation">
+    <%= link_to 'Back', destinations_path %>
+ </div>
+</div>
+
+<div class="flex-grid">
+  <div class="col">
+    <h1>New Destination</h1>
+ </div>
+</div>
+
 
 <%= render 'form', destination: @destination %>
 
