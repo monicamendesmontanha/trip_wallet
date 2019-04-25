@@ -401,7 +401,8 @@ input {
   color: white;
 }
 
-/* ERRORS MSG EXPLANATION */
+/* -------------------------------------------- */
+/* ------------ ERRORS MSG EXPLANATION ---------*/
 
 #error_explanation {
   text-align: center;
@@ -421,7 +422,8 @@ input {
   color: salmon;
 }
 
-/* SUCCESSFUL MSG */
+/* -------------------------------------------- */
+/* ----------  SUCCESSFUL MSG ------------------*/
 
 #notice {
   text-align: center;
@@ -438,6 +440,19 @@ input {
   letter-spacing: 2px;
 }
 
+
+/* -------------------------------------------- */
+/* ---------------  BAR CHART ----------------- */
+
+/* .ctx .canvas .parentNode {
+} */
+
+/* #chart-0 .chartjs-size-monitor {
+  display: block;
+  height: 880px;
+  width: 1269px;
+  margin: auto
+} */
 
 
 /* -------------------------------------------- */

@@ -29,8 +29,8 @@ class ExpensesController < ApplicationController
       datasets: [
         {
             label: "Expense Category",
-            backgroundColor: "rgba(220,220,220,0.2)",
-            borderColor: "rgba(220,220,220,1)",
+            backgroundColor: "rgba(250,128,114,0.2)",
+            borderColor: "rgba(250,128,114,1)",
             data: total_by_categories.values,
         }
       ]
