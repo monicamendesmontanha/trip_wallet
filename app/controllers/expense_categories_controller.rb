@@ -29,11 +29,9 @@ class ExpenseCategoriesController < ApplicationController
 
     respond_to do |format|
       if @expense_category.save
-        format.html { redirect_to @expense_category, notice: 'Expense category was successfully created.' }
-        format.json { render :show, status: :created, location: @expense_category }
+        format.html { redirect_to expense_categories_path, notice: 'Expense category was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @expense_category.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,11 +41,9 @@ class ExpenseCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @expense_category.update(expense_category_params)
-        format.html { redirect_to @expense_category, notice: 'Expense category was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense_category }
+        format.html { redirect_to expense_categories_path, notice: 'Expense category was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @expense_category.errors, status: :unprocessable_entity }
       end
     end
   end
