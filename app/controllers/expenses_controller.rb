@@ -19,6 +19,7 @@ class ExpensesController < ApplicationController
   end
 
   def chart
+    # Find a current user and the trip regarding that user
     @trip = find_trip(params)
     return render_not_found if @trip == nil
 

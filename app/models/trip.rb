@@ -38,6 +38,8 @@ class Trip < ApplicationRecord
   def expenses_by_day
     expenses_by_group = expenses.group_by { |expense| expense.expense_date }
 
+    #key => date
+    #value  => sum of expenses of that date
     total_expense_by_date = {}
 
     last_7_days.each do |day|
@@ -49,8 +51,10 @@ class Trip < ApplicationRecord
   end
 
   def expenses_by_category
+    # Groups all expenses by category
     expenses_by_group = expenses.group_by {|expense| expense.expense_category.name}
 
+    # Create a new hash which the key is a category and value is a sum of expenses of that category
     total_expense_by_category = {}
     expenses_by_group.each do |key, value|
       total_expense_by_category[key] = value.sum { |e| e.amount }

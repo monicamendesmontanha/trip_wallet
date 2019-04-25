@@ -1,15 +1,12 @@
 class TripsController < ApplicationController
   before_action :check_login!
 
-  # GET /trips
-  # GET /trips.json
   def index
     @trips = Trip.where(user: current_user.id)
   end
 
-  # GET /trips/1
-  # GET /trips/1.json
   def show
+    #Find a current user and the trip regarding that user
     @trip = find_trip(params)
     return render_not_found if @trip == nil
 
