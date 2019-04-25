@@ -1,7 +1,11 @@
-<%= link_to 'Destinations', destinations_path %> |
-<%= link_to 'Edit', edit_destination_path(@destination) %>
-
-
+<div class="flex-grid-links">
+  <div class="col navigation">
+    <%= link_to 'Destinations', destinations_path %>
+  </div>
+  <div class="col navigation">
+    <%= link_to 'Edit', edit_destination_path(@destination) %>
+  </div>
+</div>
 
 <% if notice != nil %>
   <div class="flex-grid">
@@ -11,20 +15,23 @@
   </div>
 <% end %>
 
-
 <p>
   <strong>Name:</strong>
   <%= @destination.name %>
 </p>
+
 <p>
   <strong>Currency:</strong>
   <%= @destination.currency %>
 </p>
+
 <p>
   <strong>Symbol:</strong>
   <%= @destination.symbol %>
 </p>
+
 <p>
   <strong>Exchange rate:</strong>
   <%= @destination.exchange_rate %>
 </p>
+
