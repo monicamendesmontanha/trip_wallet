@@ -402,6 +402,13 @@ input {
 }
 
 /* -------------------------------------------- */
+/* ------------ SHOW DESTINATIONS PAGE ---------*/
+
+.exchange-rate {
+  text-align: center;
+}
+
+/* -------------------------------------------- */
 /* ------------ ERRORS MSG EXPLANATION ---------*/
 
 #error_explanation {

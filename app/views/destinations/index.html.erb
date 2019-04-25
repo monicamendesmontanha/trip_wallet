@@ -35,7 +35,7 @@
         <td><%= destination.name %></td>
         <td><%= destination.currency %></td>
         <td><%= destination.symbol %></td>
-        <td><%= destination.exchange_rate %></td>
+        <td><div class="exchange-rate"><%= destination.exchange_rate %></div></td>
         <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
       </tr>
     <% end %>
