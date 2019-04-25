@@ -27,22 +27,22 @@
 
    <div class="col" id="login-form">
     <%= form.label :name %>
-    <%= form.text_field :name, placeholder: @trip.name, autofocus: true%>
+    <%= form.text_field :name, placeholder: "Summer Holiday", autofocus: true%>
   </div>
 
   <div class="col" id="login-form">
     <%= form.label :start_date %>
-    <%= form.date_field :start_date, min: Date.today, value: @start_date %>
+    <%= form.date_field :start_date, min: @trip.start_date %>
   </div>
 
   <div class="col" id="login-form">
     <%= form.label :end_date %>
-    <%= form.date_field :end_date, value: @end_date %>
+    <%= form.date_field :end_date %>
   </div>
 
   <div class="col" id="login-form">
     <%= form.label :budget %>
-    <%= form.number_field :budget %>
+    <%= form.number_field :budget, placeholder: "AUD $   1000.00" %>
   </div>
 
   <div class="col" id="login-form">
