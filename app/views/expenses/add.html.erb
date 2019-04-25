@@ -10,23 +10,21 @@
  </div>
 </div>
 
-
-<div>
-  Trip: <%= @trip.name %>
+<div class="flex-grid">
+  <div class="col" id="trip-info-history">
+    <div>
+      Trip: <%= @trip.name %>
+    </div>
+ </div>
 </div>
 
-<div>
-  Destination: <%= @trip.destination.name %>
-</div>
 
-<div>
-  Symbol: <%= @trip.destination.symbol %>
-</div>
-
+<div class="flex-grid">
 <%= form_with(model: @expense) do |form| %>
 
   <%= form.hidden_field :trip_id, value: @trip.id %>
 
+  <div class="col">
   <% if flash[:errors] != nil %>
     <div id="error_explanation">
       <ul>
@@ -36,28 +34,32 @@
       </ul>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
+  <div class="col" id="login-form">
     <%= form.label :amount %>
-    <%= form.number_field :amount, autofocus: true, pattern: "\d*" %>
+    <%= form.number_field :amount, autofocus: true, pattern: "\d*", placeholder: "AUD $   6.00" %>
   </div>
-  <div class="field">
+  <div class="col" id="login-form">
     <%= form.label :notes %>
-    <%= form.text_field :notes %>
+    <%= form.text_field :notes, placeholder: "Coffee" %>
   </div>
 
-  <div class="field">
-    <%= form.label :expense_date %>
+  <div class="col" id="login-form">
+    <%= form.label :expense_date, "Date" %>
     <%= form.date_field :expense_date, min: @trip.start_date, value: Date.today  %>
   </div>
-  <div class="field">
-    <%= form.label :expense_category_id %>
+  <div class="col" id="login-form">
+    <%= form.label :expense_category_id, "Category" %>
     <%= form.select :expense_category_id, ExpenseCategory.all.map { |e| [e.name, e.id] }, include_blank: 'Please choose' %>
   </div>
-  <div class="flex-grid-links actions"">
-    <div class="col actions">
-      <%= form.submit %>
-    </div>
+
+
+  <div class="col form-submit">
+    <div class="form-submit-placeholder"></div>
+    <div class="form-submit-action"><%= form.submit %></div>
   </div>
 
 <% end %>
+
+</div>
