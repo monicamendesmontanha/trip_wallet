@@ -1,7 +1,17 @@
 <%= link_to 'Destinations', destinations_path %> |
 <%= link_to 'Edit', edit_destination_path(@destination) %>
 
-<p id="notice"><%= notice %></p>
+
+
+<% if notice != nil %>
+  <div class="flex-grid">
+    <div class="col">
+      <i class="fas fa-check-circle" id="notice"> <%= notice %></i>
+    </div>
+  </div>
+<% end %>
+
+
 <p>
   <strong>Name:</strong>
   <%= @destination.name %>

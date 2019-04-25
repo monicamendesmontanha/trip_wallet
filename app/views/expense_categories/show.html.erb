@@ -1,7 +1,14 @@
 <%= link_to 'Edit', edit_expense_category_path(@expense_category) %> |
 <%= link_to 'Back', expense_categories_path %>
 
-<p id="notice"><%= notice %></p>
+
+<% if notice != nil %>
+  <div class="flex-grid">
+    <div class="col">
+      <i class="fas fa-check-circle" id="notice"> <%= notice %></i>
+    </div>
+  </div>
+<% end %>
 
 <p>
   <strong>Name:</strong>
