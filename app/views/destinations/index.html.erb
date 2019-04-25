@@ -34,7 +34,7 @@
         <td><%= link_to '-', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= destination.name %></td>
         <td><%= destination.currency %></td>
-        <td><%= destination.symbol %></td>
+        <td><div class="exchange-rate"><%= destination.symbol %></div></td>
         <td><div class="exchange-rate"><%= destination.exchange_rate %></div></td>
         <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
       </tr>
