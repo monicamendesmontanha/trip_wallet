@@ -1,56 +1,41 @@
-  <div class="flex-grid-links">
-   <div class="col navigation">
-      <%= link_to 'Summary', @trip %>
+<div class="flex-grid-links">
+  <div class="col navigation">
+    <%= link_to 'Summary', @trip %>
   </div>
 </div>
-
 <div class="flex-grid">
   <div class="col">
     <h1>Editing Trip</h1>
   </div>
 </div>
 
+<%= render 'shared/error_messages', locals: { errors: @trip.errors } %>
+
 <div class="flex-grid">
-  <div class="col">
-    <%= form_with(model: @trip, local: true) do |form| %>
-      <% if @trip.errors.any? %>
-        <div id="error_explanation">
-        <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
-        <ul>
-          <% @trip.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-  </div>
+  <%= form_with(model: @trip, local: true) do |form| %>
+    <div class="col" id="login-form">
+      <%= form.label :name %>
+      <%= form.text_field :name, placeholder: "Summer Holiday", autofocus: true%>
+    </div>
+    <div class="col" id="login-form">
+      <%= form.label :start_date %>
+      <%= form.date_field :start_date, min: @trip.start_date %>
+    </div>
+    <div class="col" id="login-form">
+      <%= form.label :end_date %>
+      <%= form.date_field :end_date %>
+    </div>
+    <div class="col" id="login-form">
+      <%= form.label :budget %>
+      <%= form.number_field :budget, placeholder: "AUD $   1000.00" %>
+    </div>
+    <div class="col" id="login-form">
+      <%= form.label :destination %>
+      <%= form.select :destination_id, Destination.all.map { |d| [d.name, d.id] }, include_blank: 'Please choose' %>
+    </div>
+    <div class="col form-submit">
+      <div class="form-submit-placeholder"></div>
+      <div class="form-submit-action"><%= form.submit %></div>
+    </div>
   <% end %>
-
-   <div class="col" id="login-form">
-    <%= form.label :name %>
-    <%= form.text_field :name, placeholder: "Summer Holiday", autofocus: true%>
-  </div>
-
-  <div class="col" id="login-form">
-    <%= form.label :start_date %>
-    <%= form.date_field :start_date, min: @trip.start_date %>
-  </div>
-
-  <div class="col" id="login-form">
-    <%= form.label :end_date %>
-    <%= form.date_field :end_date %>
-  </div>
-
-  <div class="col" id="login-form">
-    <%= form.label :budget %>
-    <%= form.number_field :budget, placeholder: "AUD $   1000.00" %>
-  </div>
-
-  <div class="col" id="login-form">
-    <%= form.label :destination %>
-    <%= form.select :destination_id, Destination.all.map { |d| [d.name, d.id] }, include_blank: 'Please choose' %>
-  </div>
-
-  <div class="col form-submit">
-    <div class="form-submit-placeholder"></div>
-    <div class="form-submit-action"><%= form.submit %></div>
-  </div>
-<% end %>
+</div>

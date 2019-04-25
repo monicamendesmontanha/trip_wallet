@@ -21,6 +21,7 @@
 <div class="col">
   <% if flash[:errors] != nil %>
     <div id="error_explanation">
+      <h2><i class="fas fa-exclamation-circle"></i> prohibited this expense from being saved:</h2>
       <ul>
       <% flash[:errors].each do |message| %>
         <li><%= message %></li>
