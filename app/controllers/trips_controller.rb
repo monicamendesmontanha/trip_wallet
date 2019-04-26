@@ -38,7 +38,6 @@ class TripsController < ApplicationController
   end
 
   # POST /trips
-  # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
 
@@ -52,7 +51,6 @@ class TripsController < ApplicationController
   end
 
   # PATCH/PUT /trips/1
-  # PATCH/PUT /trips/1.json
   def update
     @trip = find_trip(params)
     return render_not_found if @trip == nil
@@ -67,7 +65,6 @@ class TripsController < ApplicationController
   end
 
   # DELETE /trips/1
-  # DELETE /trips/1.json
   def destroy
     @trip = find_trip(params)
     return render_not_found if @trip == nil

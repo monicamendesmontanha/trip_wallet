@@ -38,8 +38,7 @@ class Trip < ApplicationRecord
   def expenses_by_day
     expenses_by_group = expenses.group_by { |expense| expense.expense_date }
 
-    #key => date
-    #value  => sum of expenses of that date
+    # Create a new hash which the key is a date and value is a sum of expenses of that date
     total_expense_by_date = {}
 
     last_7_days.each do |day|
