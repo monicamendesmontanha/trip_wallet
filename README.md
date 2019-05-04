@@ -3,8 +3,9 @@
 This is my first project mobile using **Ruby on Rails** and PostgreSQL. </br>
 [Link to live site](https://trip-wallet.herokuapp.com) Project 1: "Trip Wallet"
 
-* [Feedback notes by @andthomas](https://gist.github.com/andthomas/99ac1a7058a39c0a93ad36110c54cdf6)
+- [x] [Feedback notes by @andthomas](https://gist.github.com/andthomas/99ac1a7058a39c0a93ad36110c54cdf6)
 
+---
 Keep track of your expenses while travelling.
 Enjoy travelling and saving money at the same time.
 Store and visualise all your expenses organized by category.
