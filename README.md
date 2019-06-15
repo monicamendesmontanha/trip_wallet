@@ -14,6 +14,10 @@ More features coming soon:
 - Automatically conversion rates by tailored settings;
 
 
+### Usage
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/33978352/59548203-edd81480-8f8e-11e9-8725-3557ef38e0cc.gif)
+
+
 ### Listing trips
 <img width="429" alt="Screen Shot 2019-04-25 at 22 08 49" src="https://user-images.githubusercontent.com/33978352/56734860-51bc3900-67a7-11e9-892b-2128c7c4290b.png">
 
